@@ -3,14 +3,11 @@
 
     require_once('modulos/config.php');
 
-    $action = "bd/inserirCadastro.php";
-
     if(!$conex = conexaoMysql()){
         echo("<script> alert('".ERRO_CONEX_BD_MYSQL."') </script>");
         die;
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -126,7 +123,7 @@
                 </div>
                 <div id="cadastroCliente">
                     <div id="formularioCadastroCliente">
-                        <form name="frmCadastroCliente" method="post" action="bd/inserirCadastro.php">
+                        <form name="frmCadastroCliente" method="post" action="">
                             <div id="nomeCliente">
                                 <div class="cadastroInformacoes">
                                     <p> Nome do Cliente: </p>
@@ -153,10 +150,10 @@
                             </div>
                             <div id="cadastroCheckIn">
                                 <div class="cadastroInformacoes">
-                                    <p> Check-in: </p>
+                                    <p> Data Check-in: </p>
                                 </div>
                                 <div class="cadastroEntradaDeDados">
-                                    <input id="definirCheckIn" class="inputCadastroCliente" type="date" name="txtDefinirCheckIn" value="">
+                                    <input id="definirCheckIn" class="inputCadastroCliente" type="text" name="txtDefinirCheckIn" value="" placeholder="dd/mm/yyy">
                                 </div>    
                                 
                                 <div id="cadastroHorarioCheckIn">
@@ -164,17 +161,17 @@
                                         <p> Horário: </p>
                                     </div>
                                     <div class="cadastroEntradaDeDados">
-                                         <input class="definirHorarioCheckIn" type="time" name="txtDefinirHorarioCheckOut" value="" placeholder="00:00">
+                                         <input id="cadastroDefinicaoHorarioCheckIn" class="definirHorarioCheckIn" type="text" name="txtDefinirHorarioCheckOut" value="" placeholder="00:00">
                                     </div>    
                                 </div>
                             </div>
 
                             <div id="cadastroCheckOut">
                                 <div class="cadastroInformacoes">
-                                    <p> Check-out: </p>
+                                    <p> Data Check-out: </p>
                                 </div>
                                 <div class="cadastroEntradaDeDados">
-                                    <input id="definirCheckOut" class="inputCadastroCliente" type="date" name="txtDefinirCheckOut" value="">
+                                    <input id="definirCheckOut" class="inputCadastroCliente" type="text" name="txtDefinirCheckOut" value="" placeholder="dd/mm/yyy">
                                 </div>   
                                 
                                 <div id="cadastroHorarioCheckOut">
@@ -182,7 +179,7 @@
                                         <p> Horário: </p>
                                     </div>
                                     <div class="cadastroEntradaDeDados">
-                                         <input class="definirHorarioCheckOut"  type="time" name="txtDefinirHorarioCheckOut" value="" placeholder="00:00">
+                                         <input id="cadastroDefinicaoHorarioCheckOut" class="definirHorarioCheckOut"  type="text" name="txtDefinirHorarioCheckOut" value="" placeholder="00:00">
                                     </div>    
                                 </div>
                             </div>
@@ -204,6 +201,8 @@
             </div>
         </footer>
     </div>
+    
+    <script src="js/scriptPaginaPrincipal.js"></script>
 </body>
 </html>
 
